@@ -1,0 +1,51 @@
+:root{
+    --primary: #FFD55E;
+    --secondary: #5E88FF;
+}
+
+body{
+    background-color: #C4B5FD;
+    font-family: monospace;
+}
+
+h1{
+    text-align: center;
+    color: black;
+    margin: 3rem;
+}
+
+#description{
+    text-align: center;
+}
+
+span{
+    font-size: large;
+}
+ a{
+     text-decoration: none;
+     color: var(--secondary);
+ }
+ a:hover{
+     font-weight: bold;
+ }
+#txt-input{
+    display: block;
+    margin: auto;
+    padding: 1rem;
+    margin-top: 4rem;
+}
+
+#btn-translate{
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+}
+#txt-output{
+    display: block;
+    margin: auto;
+    border: solid black 1px;
+    padding: 1rem;
+    height: 7rem;
+    width: 19rem;
+    margin-top: 2rem;
+}
