@@ -1,24 +1,23 @@
-var btnTranslate = document.querySelector("#btn-translate");
-var txtInput = document.querySelector("#txt-input");
-var txtOutput = document.querySelector("#txt-output");
+let btnTranslate = document.querySelector("#btn-translate");
+let txtInput = document.querySelector("#txt-input");
+let txtOutput = document.querySelector("#txt-output");
 
-var serverURL = "https://api.funtranslations.com/translate/shakespeare.json";
+let serverURL = "https://api.funtranslations.com/translate/shakespeare.json";
 
-function getTranslationURL(text){
-    return serverURL + "?" + "text=" + text;
-}
-
-function errorHandler(error){
-    console.log("Error occured ", error);
-}
-
-var a = "dont click twice";
-function clickEventHandler(){
-    fetch(getTranslationURL(txtInput.value))
-    .then(response => response.json())
-    .then(json => txtOutput.innerText = (json.contents.translated))
-    .catch(errorHandler)
-
+const getTranslationURL = (text) => {
+  return serverURL + "?" + "text=" + text;
 };
 
-btnTranslate.addEventListener("click" , clickEventHandler);
+const errorHandler = (error) => {
+  console.log("Error occured ", error);
+};
+
+let a = "dont click twice";
+const clickEventHandler = () => {
+  fetch(getTranslationURL(txtInput.value))
+    .then((response) => response.json())
+    .then((json) => (txtOutput.innerText = json.contents.translated))
+    .catch(errorHandler);
+};
+
+btnTranslate.addEventListener("click", clickEventHandler);
